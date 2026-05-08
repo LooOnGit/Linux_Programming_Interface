@@ -50,8 +50,8 @@ int main() {
     {
         /*read data from client and echo it back*/
         memset(buffer, 0, BUF_SIZE);
-        ssize_t bytesRead = read(clientFd, buffer, BUF_SIZE);\
-        if(bytesRead < 0)
+        ssize_t bytesRead = read(clientFd, buffer, BUF_SIZE);
+        if(bytesRead <= 0)
         {
             printf("Client disconnect\n");
             break;

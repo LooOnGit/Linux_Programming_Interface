@@ -35,7 +35,12 @@ int main() {
     {
         printf("Enter message: ");
         memset(buffer, 0, BUF_SIZE);
-        fgets(buffer, BUF_SIZE, stdin);
+        if(fgets(buffer, BUF_SIZE, stdin) == NULL)
+        {
+            printf("break\n");
+            break;
+        }
+
 
         write(clientFd, buffer, strlen(buffer));
 
